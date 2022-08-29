@@ -1,5 +1,5 @@
 // packages needed for this application
-
+const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require("inquirer")
 const fs = require('fs'); //read/write files
 // array of objects hold the questions to use with inguirer
@@ -83,10 +83,11 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(README, data) { 
-    fs.writeFile('README.MD', data, (err) => err ? console.error(err) : console.log('Success!')
+function writeToFile(data) { 
+    fs.writeFile('README.md', data.install, (err) => err ? console.error(err) : console.log('Success with install!')
     );
-
+    fs.writeFile('README.md', data.description, (err) => err ? console.error(err) : console.log('Success with description!')
+    );
 }
 
 // WHEN I enter my project title
@@ -107,7 +108,7 @@ function init() {
     .then(answer => {
             console.table(answer);
             console.log(answer.install);
-            writeToFile(README.ME, answer);
+            writeToFile(answer);
         })
 
 }
