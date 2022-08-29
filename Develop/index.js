@@ -107,6 +107,7 @@ function init() {
     .then(answer => {
             console.table(answer);
             console.log(answer.install);
+            writeToFile(README.ME, answer);
         })
 
 }
