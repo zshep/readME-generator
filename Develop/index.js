@@ -2,80 +2,93 @@
 const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require("inquirer")
 const fs = require('fs'); //read/write files
+
+
 // array of objects hold the questions to use with inguirer
 const questions = [
     {
         type: "input",
         message: "What is the title of your project?",
-        name: "title"
+        name: "title",
+        default: "Missing Title",
     },
     {
         type: "input",
         message: "Please write a description for your project",
-        name: "description"
+        name: "description",
+        default: "Missing description",
     },
     {
         type: "input",
         message: "What are the installation instructions for your project?",
         name: "install",
-        
+        default: "Missing installation",
+
     },
     {
         type: "input",
         message: "What are the instructions to use for your project?",
         name: "use1",
-        
+        default: "Missing instructions 1"
     },
     {
         type: "input",
         message: "What are some examples that your project can be used for?",
-        name: "use2",       
+        name: "use2",
+        default: "Missing exampes of instructions",
     },
     {
-        type: "input", // make conditional if yes stay in order, if not skip to further question
+        type: "confirm", 
         message: "Where there any contributors to your project?",
         name: "credit1",
-        
+        default: false,
     },
     {
         type: "input",
         message: "Please list type their name",
         name: "credit2",
-        
+        default: "Missing contributor names",
+        when: (answers) => answers.credit1 === true,
     },
     {
         type: "input", 
         message: "What are their github usernames?",
         name: "credit3",
+        default: "Missing contributor github links",
+        when: (answers) => answers.credit1 === true,
     }, //create way to add more contributors 
     {
         type: "list",
         message: "How would you want to set up your contributions section?",
         name: "contributions",
-        choices: ["Use Contributor Convenant", "Create Own" , "Ignore Section"],
+        choices: ["Use Contributor Convenant", "Create Own", "Ignore Section"],
         
     },
     {
         type: "input", //create way to list more than one test
         message: "Describe a test?",
         name: "test",
-   },
-   {
+        default: "Missing tests",
+    },
+    {
         type: "checklist",
         message: "What licenses would you like to add to your project? Select all that you would like",
-        name: "liscense",
-        choices: ["", "" , ""], //grab a list of liscenses for the user to pick
-    
+        name: "license",
+        choices: ["Apache 2.0 License", "BSD 3-Clause License", "CC0", "The Mit License"], //grab a list of liscenses for the user to pick
+        
     },
     {
         type: "input",
         message: "What is your github username?",
         name: "github",
+        default: "missing github username"
     },
     {
         type: "input",
         message: "What is your email address?",
         name: "email",
+        missing: "email address",
+        default: "missing email address",
         //validation:,
     },
 ];
@@ -83,12 +96,43 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(data) { 
-    fs.writeFile('README.md', data.install, (err) => err ? console.error(err) : console.log('Success with install!')
+function writeToFile(answer) {
+    //creating variables from the user answers
+    title = answer.title;
+    description = answer.description;
+    Install = answer.install;
+    license = answer.license;
+    tests = answer.test;
+    github_name = answer.github;
+    email = answer.email;
+    //debugging
+    console.log(title);
+    console.log(tests);
+    console.log(description);
+    
+    //writing to file
+    fs.writeFile('README.md', title, (err) => err ? console.error(err) : console.log('Success with install!')
     );
-    fs.writeFile('README.md', data.description, (err) => err ? console.error(err) : console.log('Success with description!')
+    fs.appendFile('README.md', description, (err) => err ? console.error(err) : console.log('Success with description!')
     );
 }
+
+// TODO: Create a function to initialize app
+function init() {
+    inquirer.prompt(questions)
+        //
+        .then(answer => {
+            
+            //debugging
+            console.table(answer);
+            //starting the
+            writeToFile(answer);
+          
+        })
+
+}
+// Function call to initialize app
+init();
 
 // WHEN I enter my project title
 // THEN this is displayed as the title of the README
@@ -102,18 +146,6 @@ function writeToFile(data) {
 // THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 
 
-// TODO: Create a function to initialize app
-function init() { 
-    inquirer.prompt( questions)
-    .then(answer => {
-            console.table(answer);
-            console.log(answer.install);
-            writeToFile(answer);
-        })
-
-}
-// Function call to initialize app
-init();
 
 
 
