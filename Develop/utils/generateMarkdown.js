@@ -2,20 +2,21 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if(license = "Apache 2.0 License") {
-    
+   // const licensebadge = [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+    return ;
   }
   if(license = "BSD 3-Clause License"){
-
+  // [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
   }
 
   if(license = "CC0" ){
-
+  //[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
 
   }
 
   if(license ="The Mit License" ){}
-
+  //[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 }
 
