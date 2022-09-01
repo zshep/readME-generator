@@ -110,6 +110,12 @@ function writeToFile(answer) {
     console.log(tests);
     console.log(description);
     
+    // fs.open("ReadME.md", "rw", (err, fd) => {
+    //     fs.write(fd ,)
+
+
+    // })
+
     //writing to file
     fs.writeFile('README.md', title, (err) => err ? console.error(err) : console.log('Success with install!')
     );
