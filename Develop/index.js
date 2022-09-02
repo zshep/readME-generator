@@ -71,8 +71,8 @@ const questions = [
         default: "Missing tests",
     },
     {
-        type: "checklist",
-        message: "What licenses would you like to add to your project? Select all that you would like",
+        type: "list",
+        message: "What licenses would you like to add to your project? ",
         name: "license",
         choices: ["Apache 2.0 License", "BSD 3-Clause License", "CC0", "The Mit License"], //grab a list of liscenses for the user to pick
         
@@ -94,33 +94,15 @@ const questions = [
 ];
 
 
-
-// TODO: Create a function to write README file
+// TODO: Create a function to write fdle
 function writeToFile(answer) {
-    //creating variables from the user answers
-    title = answer.title;
-    description = answer.description;
-    Install = answer.install;
-    license = answer.license;
-    tests = answer.test;
-    github_name = answer.github;
-    email = answer.email;
-    //debugging
-    console.log(title);
-    console.log(tests);
-    console.log(description);
     
-    // fs.open("ReadME.md", "rw", (err, fd) => {
-    //     fs.write(fd ,)
-
-
-    // })
-
-    //writing to file
-    fs.writeFile('README.md', title, (err) => err ? console.error(err) : console.log('Success with install!')
-    );
-    fs.appendFile('README.md', description, (err) => err ? console.error(err) : console.log('Success with description!')
-    );
+    // `<h1>${title}</h1>`
+    
+    //writing file with the data going through markdown function
+    fs.writeFile("README.md",generateMarkdown(answer),(err) => {
+        err ? console.error(err) : console.log("Success writing file")
+    })
 }
 
 // TODO: Create a function to initialize app
@@ -142,15 +124,14 @@ function init() {
 init();
 
 // WHEN I enter my project title
-// THEN this is displayed as the title of the README
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+// THEN this is displayed as the title of the fd WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
+// THEN this information is added to the sections of the fdtitled Description, Installation, Usage, Contributing, and Tests
 // WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+// THEN a badge for that license is added near the top of the fdd a notice is added to the section of the fdtitled License that explains which license the application is covered under
 // WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+// THEN this is added to the section of the fdtitled Questions, with a link to my GitHub profile
 // WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+// THEN this is added to the section of the fdtitled Questions, with instructions on how to reach me with additional questions
 
 
 
@@ -159,4 +140,4 @@ init();
 
 
 // WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
+// THEN I am taken to the corresponding section of tfd
