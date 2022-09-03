@@ -39,19 +39,32 @@ function generateMarkdown(data) {
   tests =data.test;
   github_name =data.github;
   email =data.email;
+  contributename = data.credit2
+  contributeGH = data.credit3
+
+  //Make clickable links to sections for TOC
+  toc = `## **Table of Contents**
+  \n  `
+    
   //debugging
   console.log(license);
   console.log(`writing the markdown`);
   //building string
-  str = `# ${title} ${LicenseBadge(license)} 
-    \n ## Description \n ${description} 
-    \n ## Installation \n ${Install} 
-    \n ## Usage \n Instructions: ${use1} \n Examples: ${use2}
-    \n ## Contributing \n ${contribute}
-    \n ## Tests \n ${tests}
-    \n ## Questions \n GitHub: ${github_name} Email: ${email} 
+  str = `# ${title} ${LicenseBadge(license)}
+  \n ${toc}
+  \n ## Description \n ${description} 
+  \n ## Installation \n ${Install} 
+  \n ## Usage \n Instructions: ${use1} \n Examples: ${use2}
+  \n ## Contributing \n ${contribute}
+  \n ## Tests \n ${tests}
+  \n ## Questions \n GitHub:http://www.github.com/${github_name} 
+  \n Email: ${email} 
     `;
   
+
+
+
+
   return str;
 }
 

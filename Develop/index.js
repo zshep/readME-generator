@@ -97,8 +97,7 @@ const questions = [
 // TODO: Create a function to write fdle
 function writeToFile(answer) {
     
-    // `<h1>${title}</h1>`
-    
+   
     //writing file with the data going through markdown function
     fs.writeFile("README.md",generateMarkdown(answer),(err) => {
         err ? console.error(err) : console.log("Success writing file")
@@ -123,21 +122,6 @@ function init() {
 // Function call to initialize app
 init();
 
-// WHEN I enter my project title
-// THEN this is displayed as the title of the fd WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the fdtitled Description, Installation, Usage, Contributing, and Tests
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the fdd a notice is added to the section of the fdtitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the fdtitled Questions, with a link to my GitHub profile
-// WHEN I enter my email address
-// THEN this is added to the section of the fdtitled Questions, with instructions on how to reach me with additional questions
-
-
-
-
-
-
 
 // WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of tfd
+// THEN I am taken to the corresponding section of readme
