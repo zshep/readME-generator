@@ -1,4 +1,4 @@
-# Shep [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+# ty [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/) 
     
  ## Description 
  Missing description 
@@ -7,13 +7,14 @@
  Missing installation 
     
  ## Usage 
- Missing instructions 1 Missing exampes of instructions
+ Instructions: Missing instructions 1 
+ Examples: Missing exampes of instructions
     
  ## Contributing 
  Use Contributor Convenant
     
  ## Tests 
- Shep
+ Missing tests
     
  ## Questions 
  GitHub: missing github username Email: missing email address 
