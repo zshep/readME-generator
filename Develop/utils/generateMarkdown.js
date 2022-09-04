@@ -1,6 +1,8 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//  function that returns a license badge based on which license is passed in
+//const LicenseChoices = [ 'Apache 2.0 License', "BSD 3-Clause License", "CC0" , "The Mit License"]
+
 function LicenseBadge(license) {
+  //use switch statements to cut down on code
   console.log(`LicenseBadge is running`);
   if(license == "Apache 2.0 License") {
     const licensebadge1 = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
@@ -26,7 +28,33 @@ function LicenseBadge(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+function LicenseLink(license) {
+  console.log(license);
+  switch(license) {
+    case "Apache 2.0 License":
+      //add in code to grab link
+      console.log("Apache chosen");
+      return "(https://opensource.org/licenses/Apache-2.0)";
+      
+    case "BSD 3-Clause License":
+      console.log("BSD chosen");
+      return "(https://opensource.org/licenses/BSD-3-Clause)";
+      
+    case "CC0":
+      console.log("CC0 chosen");
+      return "(http://creativecommons.org/publicdomain/zero/1.0/)";
+      
+    case "The Mit Licsense":
+      console.log("MIT chosen");
+      return "(https://opensource.org/licenses/MIT)";
+      
+    default:
+      console.log("something went wrong...");
+  }
+  
+}
+
+// function to generate markdown for README
 function generateMarkdown(data) {
   //creating variables from the user answers
   title =data.title;
@@ -44,7 +72,14 @@ function generateMarkdown(data) {
 
   //Make clickable links to sections for TOC
   toc = `## **Table of Contents**
-  \n  `
+  \n Installation
+  \n Usage
+  \n Contributing
+  \n Liscensing
+  \n Tests
+  \n Questions `;
+
+ // ![AUR license](https://img.shields.io/aur/license/android-studio)
     
   //debugging
   console.log(license);
@@ -56,12 +91,14 @@ function generateMarkdown(data) {
   \n ## Installation \n ${Install} 
   \n ## Usage \n Instructions: ${use1} \n Examples: ${use2}
   \n ## Contributing \n ${contribute}
+  \n ## License \n ${LicenseLink(license)}
   \n ## Tests \n ${tests}
   \n ## Questions \n GitHub:http://www.github.com/${github_name} 
   \n Email: ${email} 
     `;
   
-
+//to do: add in Liscense section: put liscense info inside section
+ 
 
 
 

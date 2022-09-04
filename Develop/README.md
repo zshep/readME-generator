@@ -1,8 +1,18 @@
-# Missing Title [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# Missing Title [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
   
  ## **Table of Contents**
-    
   
+ Installation
+  
+ Usage
+  
+ Contributing
+  
+ Liscensing
+  
+ Tests
+  
+ Questions 
   
  ## Description 
  Missing description 
@@ -17,11 +27,14 @@
  ## Contributing 
  Use Contributor Convenant
   
+ ## License 
+ (http://creativecommons.org/publicdomain/zero/1.0/)
+  
  ## Tests 
  Missing tests
   
  ## Questions 
  GitHub:http://www.github.com/missing github username 
   
- Email: missing email address 
+ Email: zsheperdigian@gmail.com 
     
