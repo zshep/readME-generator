@@ -1,6 +1,4 @@
 //  function that returns a license badge based on which license is passed in
-//const LicenseChoices = [ 'Apache 2.0 License', "BSD 3-Clause License", "CC0" , "The Mit License"]
-
 function LicenseBadge(license) {
   //use switch statements to cut down on code
   console.log(`LicenseBadge is running`);
@@ -27,7 +25,7 @@ function LicenseBadge(license) {
   return licensebadge4;
   }
 }
-
+//function that grabs the liscense Link from user and puts it into LIcense section
 function LicenseLink(license) {
   console.log(license);
   switch(license) {
@@ -72,37 +70,29 @@ function generateMarkdown(data) {
 
   //Make clickable links to sections for TOC
   toc = `## **Table of Contents**
-  \n Installation
-  \n Usage
-  \n Contributing
-  \n Liscensing
-  \n Tests
-  \n Questions `;
+  \n [Description](#id-1)
+  \n [Installation](#id-2)
+  \n [Usage](#id-3)
+  \n [Contributing](#id-4)
+  \n [Liscense](#id-5)
+  \n [Tests](#id-6)
+  \n [Questions](#id-7) `;
 
- // ![AUR license](https://img.shields.io/aur/license/android-studio)
-    
-  //debugging
-  console.log(license);
-  console.log(`writing the markdown`);
-  //building string
+  //building string that will generate the markdown/readme
   str = `# ${title} ${LicenseBadge(license)}
   \n ${toc}
-  \n ## Description \n ${description} 
-  \n ## Installation \n ${Install} 
-  \n ## Usage \n Instructions: ${use1} \n Examples: ${use2}
-  \n ## Contributing \n ${contribute}
-  \n ## License \n ${LicenseLink(license)}
-  \n ## Tests \n ${tests}
-  \n ## Questions \n GitHub:http://www.github.com/${github_name} 
+  \n <h2 id="id-1">Description</h2> \n ${description} 
+  \n <h2 id="id-2">Installation</h2> \n ${Install} 
+  \n <h2 id="id-3">Usage \n Instructions </h2>: ${use1} \n Examples: ${use2}
+  \n <h2 id="id-4">Contributing</h2> \n ${contribute}
+  \n <h2 id="id-5">License</h2> \n [${license}](${LicenseLink(license)})
+  \n <h2 id="id-6">Tests</h2> \n ${tests}
+  \n <h2 id="id-7">Questions</h2> \n GitHub:http://www.github.com/${github_name} 
   \n Email: ${email} 
     `;
   
-//to do: add in Liscense section: put liscense info inside section
- 
-
-
-
   return str;
 }
 
+//exports this javascript page
 module.exports = generateMarkdown;
