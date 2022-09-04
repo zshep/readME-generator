@@ -42,7 +42,7 @@ function LicenseLink(license) {
       console.log("CC0 chosen");
       return "(http://creativecommons.org/publicdomain/zero/1.0/)";
       
-    case "The Mit Licsense":
+    case "The Mit License":
       console.log("MIT chosen");
       return "(https://opensource.org/licenses/MIT)";
       
@@ -85,7 +85,7 @@ function generateMarkdown(data) {
   \n <h2 id="id-2">Installation</h2> \n ${Install} 
   \n <h2 id="id-3">Usage \n Instructions </h2>: ${use1} \n Examples: ${use2}
   \n <h2 id="id-4">Contributing</h2> \n ${contribute}
-  \n <h2 id="id-5">License</h2> \n [${license}](${LicenseLink(license)})
+  \n <h2 id="id-5">License</h2> \n <a href="(${LicenseLink(license)})">${license}</a>
   \n <h2 id="id-6">Tests</h2> \n ${tests}
   \n <h2 id="id-7">Questions</h2> \n GitHub:http://www.github.com/${github_name} 
   \n Email: ${email} 
