@@ -87,7 +87,7 @@ function generateMarkdown(data) {
   \n <h2 id="id-4">Contributing</h2> \n ${contribute}
   \n <h2 id="id-5">License</h2> \n <a href="(${LicenseLink(license)})">${license}</a>
   \n <h2 id="id-6">Tests</h2> \n ${tests}
-  \n <h2 id="id-7">Questions</h2> \n GitHub:http://www.github.com/${github_name} 
+  \n <h2 id="id-7">Questions</h2> \n GitHub: http://www.github.com/${github_name} 
   \n Email: ${email} 
     `;
   

@@ -39,4 +39,7 @@
  GitHub: http://www.github.com/zshep 
   
  Email: zsheperdigian@gmail.com 
-    
+
+ Link to Application: https://zshep.github.io/readME-generator/
+
+ Link to Video: https://drive.google.com/file/d/1WEx7CYCwmtCW59ERHzzSrzHyAh-ofUu0/view    
